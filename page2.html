@@ -182,6 +182,7 @@ function topFunction(name) {
 
     setTimeout(handle_invite_accept, 5000, name);
     invitecheck = true;
+    console.log(invitecheck);
 
 
     var datetime1 = new Date();
@@ -191,9 +192,11 @@ function topFunction(name) {
 }	
 
 function invite_self(name) {
-    $("#msgbox").append("<h5 style='color: white'> "+ name +" Invited You to the room</h5>");
+  if (invitecheck==false){
+      $("#msgbox").append("<h5 style='color: white'> "+ name +" Invited You to the room</h5>");
 
-    document.getElementById("show_on_invite").style.display = "block";
+      document.getElementById("show_on_invite").style.display = "block";
+  }
 }
 function handle_invite(event){
     $("#msgbox").append("<h5> You "+ event +" the Invite</h5>");
@@ -250,7 +253,7 @@ setTimeout(OtherPeopleDecline, 35000, participantJ, participantE);
 setTimeout(OtherPeople, 44000, participantD, participantH);
 setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
 
-if (invitecheck==false)setTimeout(invite_self, 55000, participantA);
+setTimeout(invite_self, 55000, participantA);
 
 setTimeout(Save, 70000);
 
