@@ -109,8 +109,8 @@ $(document).ready(function(){
 
 <div class="w3-threequarter" id="show_on_invite" style="margin-top: 5% ;bottom: 1px;display: none">
 
-      <button id = "one_press6" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
-      <button id = "one_press7" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
+      <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
+      <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
 </div>
 
 
@@ -179,6 +179,9 @@ function topFunction(name) {
     document.getElementById("one_press10").disabled = true;
 
 
+    setTimeout(handle_invite_accept, 5000, name);
+
+
     var datetime1 = new Date();
     var endtime = datetime1.getTime();
     var time_diff = endtime - starttime;
@@ -192,8 +195,21 @@ function invite_self(name) {
 }
 function handle_invite(event){
     $("#msgbox").append("<h5> You "+ event +" the Invite</h5>");
-    document.getElementById("one_press6").disabled = true;
-    document.getElementById("one_press7").disabled = true;
+    document.getElementById("one_press19").disabled = true;
+    document.getElementById("one_press20").disabled = true;
+
+    var datetime1 = new Date();
+    var endtime = datetime1.getTime();
+    var time_diff = endtime - starttime;
+    if (event == "Accepted"){
+      times += time_diff + " X<br />";
+    }else {
+      times += time_diff + " Y<br />";
+    }
+}
+
+function handle_invite_accept(user){
+    $("#msgbox").append("<h5>"+ user +" Accepted the Invite</h5>");
 
     var datetime1 = new Date();
     var endtime = datetime1.getTime();
