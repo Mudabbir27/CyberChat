@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('hero-psychology-in-education-1600.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+<!--   <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Logo
+  </div> -->
+  <div class="w3-display-middle">
+    <div style="display: inline"> 
+    <h1 class="w3-jumbo w3-text-black ">WELCOME TO CYBERCHAT</h1>
+    <!-- <h1 class="w3-jumbo w3-text-grey">COMING </h1> -->
+    </div>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <!-- <p class="w3-large w3-center">35 days left</p> -->
+    <button onclick="topFunction()" class="button"><span>Start </span></button>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+
+
+function topFunction() {
+	// window.alert("Your Session will now start");
+	window.location = 'page2.html';
+}	
+</script>
+
+</body>
+</html>

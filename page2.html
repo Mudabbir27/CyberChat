@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<title>Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+body,h1,p {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+
+.bgimg {
+    background-image: url('back.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+div.transbox {
+  margin: 30px;
+
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){   
+
+    
+
+    $("#btn1").click(function(){
+        $("#msgbox").append("<p>Hey</p>").fadeIn();
+    });
+
+
+    $("#btn2").click(function(){
+        $("ol").append("<li>Appended item</li>");
+    });
+});
+</script>
+
+
+
+
+
+<body background='hero-psychology-in-education-1600.png'>
+
+<div class="w3-half" style="margin-top: 5%">
+
+  <div id= "msgbox" class="transbox">
+
+<!--     <div id="show_on_invite" style="margin-top: 5% ;bottom: 1px;position: relative;display: none">
+
+      <button id = "one_press6" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
+      <button id = "one_press7" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
+    </div> -->
+  </div>
+
+
+</div>
+
+<div class="w3-threequarter" id="show_on_invite" style="margin-top: 5% ;bottom: 1px;display: none">
+
+      <button id = "one_press6" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
+      <button id = "one_press7" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
+</div>
+
+
+
+<div class="w3-half" style="margin-left: 2%;">
+  <h1 style="border-top: solid;"><strong>You want to invite ...</strong></h1> 
+  <!-- check -->
+      <button id = "one_press1" onclick="topFunction(participantA)" class="button"><span>User A </span></button>
+      <button id = "one_press2" onclick="topFunction(participantB)" class="button"><span>User B</span></button>
+      <button id = "one_press3" onclick="topFunction(participantC)" class="button"><span>User C </span></button>
+      <button id = "one_press4" onclick="topFunction(participantD)" class="button"><span>User D </span></button>
+      <button id = "one_press5" onclick="topFunction(participantE)" class="button"><span>User E </span></button>
+      <button id = "one_press6" onclick="topFunction(participantF)" class="button"><span>User F </span></button>
+      <button id = "one_press7" onclick="topFunction(participantG)" class="button"><span>User G </span></button>
+      <button id = "one_press8" onclick="topFunction(participantH)" class="button"><span>User H </span></button>
+      <button id = "one_press9" onclick="topFunction(participantI)" class="button"><span>User I </span></button>
+      <button id = "one_press10" onclick="topFunction(participantJ)" class="button"><span>User J </span></button>
+
+
+  <h3>Feel Free to invite someone!</h2>
+</div>
+<div class="w3-quarter" style="margin-top: 8%; margin-left: 5%">
+  
+      <!-- <button onclick="sedlyf()" class="button"><span>Start Chatting </span></button> -->
+      <br>
+      <!-- <button onclick="window.location='index.html'" class="button"><span>Go Back </span></button> -->
+      <br>
+      <!-- <button onclick="Save()" class="button"><span>Exit </span></button> -->
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+var dateTime = new Date();
+var starttime = dateTime.getTime(); 
+var participantA = "User A";
+var participantB = "User B";
+var participantC = "User C";
+var participantD = "User D";
+var participantE = "User E";
+var participantF = "User F";
+var participantG = "User G";
+var participantH = "User H";
+var participantI = "User I";
+var participantJ = "User J";
+
+var times = " <br />Please write down all digits and letters below.<br />";
+
+function topFunction(name) {
+    $("#msgbox").append("<h5 style='color: white'>You Invited " + name+ "</h5>");
+
+    document.getElementById("one_press1").disabled = true;
+    document.getElementById("one_press2").disabled = true;
+    document.getElementById("one_press3").disabled = true;
+    document.getElementById("one_press4").disabled = true;
+    document.getElementById("one_press5").disabled = true;
+    document.getElementById("one_press6").disabled = true;
+    document.getElementById("one_press7").disabled = true;
+    document.getElementById("one_press8").disabled = true;
+    document.getElementById("one_press9").disabled = true;
+    document.getElementById("one_press10").disabled = true;
+
+
+    var datetime1 = new Date();
+    var endtime = datetime1.getTime();
+    var time_diff = endtime - starttime;
+    times += time_diff + "<br />";
+}	
+
+function invite_self(name) {
+    $("#msgbox").append("<h5 style='color: white'> "+ name +" Invited You to the room</h5>");
+
+    document.getElementById("show_on_invite").style.display = "block";
+}
+function handle_invite(event){
+    $("#msgbox").append("<h5> You "+ event +" the Invite</h5>");
+    document.getElementById("one_press6").disabled = true;
+    document.getElementById("one_press7").disabled = true;
+
+    var datetime1 = new Date();
+    var endtime = datetime1.getTime();
+    var time_diff = endtime - starttime;
+    if (event == "Accepted"){
+      times += time_diff + " X<br />";
+    }else {
+      times += time_diff + " Y<br />";
+    }
+}
+
+
+function OtherPeople(from, to) {
+    $("#msgbox").append("<h5 style='color: white'> " + from + " Invites " + to + " to make a group</h5>");
+}
+
+function OtherPeopleAccept(from, to) {
+    $("#msgbox").append("<h5 style='color: white'> " + from + " accepts " + to + "'s' invatation</h5>");
+}
+function OtherPeopleDecline(from, to) {
+    $("#msgbox").append("<h5 style='color: white'> " + from + " declines " + to + "'s' invatation</h5>");
+}
+
+function sedlyf(){
+  alert('Nobody has invited you yet!')
+}
+
+setTimeout(OtherPeople, 5000, participantC ,participantF); 
+setTimeout(OtherPeopleAccept, 7000 , participantF, participantA)
+setTimeout(OtherPeople, 13000, participantG, participantA); 
+setTimeout(OtherPeopleDecline, 16000, participantA, participantG); 
+setTimeout(OtherPeople, 26000, participantB, participantI); 
+setTimeout(OtherPeopleAccept, 30000 , participantI, participantB)
+setTimeout(OtherPeople, 33000, participantE, participantJ); 
+setTimeout(OtherPeopleDecline, 35000, participantJ, participantE); 
+setTimeout(OtherPeople, 44000, participantD, participantH);
+setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
+
+setTimeout(invite_self, 55000, participantA);
+setTimeout(Save, 70000);
+
+
+function Save(){
+  let newWindow = window.open("about:blank", "", ""); 
+  let textBlock = times;
+  newWindow.document.write(textBlock);
+}
+
+
+
+
+</script>
+
+</body>
+</html>
