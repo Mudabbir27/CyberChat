@@ -161,6 +161,7 @@ var participantG = "User G";
 var participantH = "User H";
 var participantI = "User I";
 var participantJ = "User J";
+var invitecheck = false;
 
 var times = " <br />Please write down all digits and letters below.<br />";
 
@@ -180,6 +181,7 @@ function topFunction(name) {
 
 
     setTimeout(handle_invite_accept, 5000, name);
+    invitecheck = true;
 
 
     var datetime1 = new Date();
@@ -248,7 +250,8 @@ setTimeout(OtherPeopleDecline, 35000, participantJ, participantE);
 setTimeout(OtherPeople, 44000, participantD, participantH);
 setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
 
-setTimeout(invite_self, 55000, participantA);
+if (invitecheck==false)setTimeout(invite_self, 55000, participantA);
+
 setTimeout(Save, 70000);
 
 
