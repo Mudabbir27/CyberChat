@@ -93,31 +93,25 @@ $(document).ready(function(){
 
 <body background='hero-psychology-in-education-1600.png'>
 
-<div class="w3-threequarter" style="margin-top: 1%">
+<div class="w3-threequarter" style="margin-top: 1%;height: 500px;max-height: 550px">
 
-  <div id= "msgbox" class="transbox">
+  <div id= "msgbox" style="margin-top: 0" class="transbox">
 
-<!--     <div id="show_on_invite" style="margin-top: 5% ;bottom: 1px;position: relative;display: none">
-
-      <button id = "one_press6" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
-      <button id = "one_press7" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
-    </div> -->
   </div>
-
-
-</div>
-
-<div class="w3-threequarter" id="show_on_invite" style="margin-top: 0%;margin-left: 2% ;bottom: 1px;display: none">
+<div id="show_on_invite" style="margin-left: 2% ;bottom: 1px;display: none">
 
       <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
       <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
 </div>
 
+</div>
+
+
+
 
 
 <div class="w3-half" style="margin-left: 2%;">
   <h1 style="border-top: solid;font-size: 28px"><strong>You want to invite ....</strong></h1> 
-  <!-- check -->
       <button id = "one_press1" onclick="topFunction(participantA)" class="button"><span> </span></button>
       <button id = "one_press2" onclick="topFunction(participantB)" class="button"><span>User B</span></button>
       <button id = "one_press3" onclick="topFunction(participantC)" class="button"><span>User C </span></button>
@@ -134,12 +128,8 @@ $(document).ready(function(){
 </div>
 <div class="w3-quarter" style="margin-top: 8%; margin-left: 5%">
   
-      <!-- <button onclick="sedlyf()" class="button"><span>Start Chatting </span></button> -->
       <br>
-      <!-- <button onclick="window.location='index.html'" class="button"><span>Go Back </span></button> -->
       <br>
-      <!-- <button onclick="Save()" class="button"><span>Exit </span></button> -->
-
 
 </div>
 
@@ -231,15 +221,6 @@ function handle_invite(event){
 
 function handle_invite_accept(user){
     $("#msgbox").append("<h5>"+ user +" Accepted the Invite</h5>");
-
-    // var datetime1 = new Date();
-    // var endtime = datetime1.getTime();
-    // var time_diff = endtime - starttime;
-    // if (event == "Accepted"){
-    //   times += time_diff + " X<br />";
-    // }else {
-    //   times += time_diff + " Y<br />";
-    // }
 }
 
 
@@ -275,12 +256,11 @@ setTimeout(Save, 70000);
 
 
 function Save(){
-  let newWindow = window.open("about:blank", "_self", ""); 
+//  let newWindow = window.open("about:blank", "_self", ""); 
+  let newWindow = window.open("about:blank", "", ""); 
   let textBlock = times;
   newWindow.document.write(textBlock);
 }
-
-
 
 
 </script>
