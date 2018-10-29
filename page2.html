@@ -259,7 +259,7 @@ setTimeout(Save, 70000);
 
 
 function Save(){
-  let newWindow = window.open("about:blank", "", ""); 
+  let newWindow = window.open("about:blank", "_self", ""); 
   let textBlock = times;
   newWindow.document.write(textBlock);
 }
