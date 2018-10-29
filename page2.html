@@ -14,9 +14,9 @@
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
+  font-size: 14px;
   padding: 20px;
-  width: 200px;
+  width: 100px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -42,7 +42,7 @@
 
 
 .button:hover span {
-  padding-right: 25px;
+  padding-right: 10px;
 }
 
 .button:hover span:after {
@@ -118,7 +118,7 @@ $(document).ready(function(){
 <div class="w3-half" style="margin-left: 2%;">
   <h1 style="border-top: solid;"><strong>You want to invite ....</strong></h1> 
   <!-- check -->
-      <button id = "one_press1" onclick="topFunction(participantA)" class="button"><span>User A </span></button>
+      <button id = "one_press1" onclick="topFunction(participantA)" class="button"><span> </span></button>
       <button id = "one_press2" onclick="topFunction(participantB)" class="button"><span>User B</span></button>
       <button id = "one_press3" onclick="topFunction(participantC)" class="button"><span>User C </span></button>
       <button id = "one_press4" onclick="topFunction(participantD)" class="button"><span>User D </span></button>
@@ -164,6 +164,22 @@ var participantJ = "Frances";
 var invitecheck = false;
 
 var times = " <br />Please write down all digits and letters below.<br />";
+
+
+window.onload = function(){
+    document.getElementById('one_press1').innerHTML = participantA;
+    document.getElementById('one_press2').innerHTML = participantB;
+    document.getElementById('one_press3').innerHTML = participantC;
+    document.getElementById('one_press4').innerHTML = participantD;
+    document.getElementById('one_press5').innerHTML = participantE;
+    document.getElementById('one_press6').innerHTML = participantF;
+    document.getElementById('one_press7').innerHTML = participantG;
+    document.getElementById('one_press8').innerHTML = participantH;
+    document.getElementById('one_press9').innerHTML = participantI;
+    document.getElementById('one_press10').innerHTML = participantJ;
+
+};
+
 
 function topFunction(name) {
     $("#msgbox").append("<h5 style='color: white'>You Invited " + name+ "</h5>");
