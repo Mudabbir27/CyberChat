@@ -93,7 +93,7 @@ $(document).ready(function(){
 
 <body background='hero-psychology-in-education-1600.png'>
 
-<div class="w3-threequarter" style="margin-top: 5%">
+<div class="w3-threequarter" style="margin-top: 1%">
 
   <div id= "msgbox" class="transbox">
 
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 </div>
 
-<div class="w3-threequarter" id="show_on_invite" style="margin-top: 5% ;bottom: 1px;display: none">
+<div class="w3-threequarter" id="show_on_invite" style="margin-top: 2% ;bottom: 1px;display: none">
 
       <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
       <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
@@ -163,7 +163,7 @@ var participantI = "Peyton";
 var participantJ = "Frances";
 var invitecheck = false;
 
-var times = " <br />Please write down all digits and letters below.<br />";
+var times = " <br />Please remember or write the first four digits<br />";
 
 
 window.onload = function(){
@@ -204,7 +204,7 @@ function topFunction(name) {
     var datetime1 = new Date();
     var endtime = datetime1.getTime();
     var time_diff = endtime - starttime;
-    times += time_diff + "<br />";
+    times += time_diff + "N<br />";
 }	
 
 function invite_self(name) {
