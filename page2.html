@@ -152,8 +152,9 @@ var participantH = "Frankie";
 var participantI = "Peyton";
 var participantJ = "Frances";
 var invitecheck = false;
+var invited_participant = "";
 
-var times = " <br />Please remember or write the down all digits<br />";
+var times = " <br />Please remember or write the down all digits and letter<br />";
 
 
 window.onload = function(){
@@ -186,8 +187,10 @@ function topFunction(name) {
     document.getElementById("one_press10").disabled = true;
 
 
+
     setTimeout(handle_invite_accept, 5000, name);
     invitecheck = true;
+    invited_participant = name;
     console.log(invitecheck);
 
 
@@ -229,7 +232,11 @@ function OtherPeople(from, to) {
 }
 
 function OtherPeopleAccept(from, to) {
-    $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " accepts " + to + "'s' invatation</h6>");
+    if (invited_participant == from){
+      OtherPeopleDecline(from,to);  
+    }else {
+      $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " accepts " + to + "'s' invatation</h6>");
+    }
 }
 function OtherPeopleDecline(from, to) {
     $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " declines " + to + "'s' invatation</h6>");
@@ -240,7 +247,7 @@ function sedlyf(){
 }
 
 setTimeout(OtherPeople, 5000, participantC ,participantF); 
-setTimeout(OtherPeopleAccept, 7000 , participantF, participantA)
+setTimeout(OtherPeopleAccept, 7000 , participantF, participantC)
 setTimeout(OtherPeople, 13000, participantG, participantA); 
 setTimeout(OtherPeopleDecline, 16000, participantA, participantG); 
 setTimeout(OtherPeople, 26000, participantB, participantI); 
@@ -256,6 +263,7 @@ setTimeout(Save, 70000);
 
 
 function Save(){
+  times += " M<br />"
   let newWindow = window.open("about:blank", "_self", ""); 
   let textBlock = times;
   newWindow.document.write(textBlock);
