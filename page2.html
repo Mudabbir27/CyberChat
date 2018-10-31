@@ -155,6 +155,7 @@ var invitecheck = false;
 var invited_participant = "";
 
 var times = " <br />Please remember or write the down all digits and letter<br />";
+var times_check = " <br />Please remember or write the down all digits and letter<br />";
 
 
 window.onload = function(){
@@ -223,7 +224,7 @@ function handle_invite(event){
 }
 
 function handle_invite_accept(user){
-    $("#msgbox").append("<h6 style='color: white;margin:8px'>"+ user +" Accepted the Invite</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'>"+ user +" Accepted Your Invite</h6>");
 }
 
 
@@ -263,7 +264,9 @@ setTimeout(Save, 70000);
 
 
 function Save(){
-  times += " M<br />"
+  if (times == times_check){
+    times += " M<br />"
+  }
   let newWindow = window.open("about:blank", "_self", ""); 
   let textBlock = times;
   newWindow.document.write(textBlock);
