@@ -4,9 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="ChatBoxStyleSheet.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+
+
+.button:hover span {
+  padding-right: 10px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+body,h1,p {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+
+.bgimg {
+    background-image: url('back.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+div.transbox {
+  margin: 30px;
+
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+</style>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,54 +89,50 @@ $(document).ready(function(){
 
 
 
+
+
 <body background='hero-psychology-in-education-1600.png'>
 
 
 
-<div class="w3-half" style="margin-top: 1%;height: 800px">
+<div class="w3-threequarter" style="margin-top: 1%;height: 500px;">
 
-  <div id= "msgbox" style="margin-top: 0" ></div>
+  <div id= "msgbox" style="margin-top: 0" class="transbox"></div>
 
   <div id="show_on_invite" style="margin-left: 2% ;bottom: 1px;display: none">
-        <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Yes, my pleasure</span></button>
-        <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>No, thanks</span></button>
+        <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Accept </span></button>
+        <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>Decline </span></button>
   </div>
 
 </div>
 
-<div class="w3-half" style="margin-left: 2%;">
 
 
-  <p style="border-top: solid;margin: 0%"></p>
-
-  <span id="canyoubemypartner" style=": bottom"></span>
-
-  <button id = "one_press" onclick="topFunction(participantA)" class="button sendButton">Send</button>
 
 
-</div>
-
-
-<div class="w3-half" style="margin-left: 2%;">
-  
-      <button id = "one_press1" onclick="canIInviteyou(participantA)" class="button"><span>User A </span></button>
-      <button id = "one_press2" onclick="canIInviteyou(participantB)" class="button"><span>User B</span></button>
-      <button id = "one_press3" onclick="canIInviteyou(participantC)" class="button"><span>User C </span></button>
-      <button id = "one_press4" onclick="canIInviteyou(participantD)" class="button" style="display: none"><span>User D </span></button>
-      <button id = "one_press5" onclick="canIInviteyou(participantE)" class="button" style="display: none"><span>User E </span></button>
-      <button id = "one_press6" onclick="canIInviteyou(participantF)" class="button" style="display: none"><span>User F </span></button>
-      <button id = "one_press7" onclick="canIInviteyou(participantG)" class="button" style="display: none"><span>User G </span></button>
-      <button id = "one_press8" onclick="canIInviteyou(participantH)" class="button" style="display: none"><span>User H </span></button>
-      <button id = "one_press9" onclick="canIInviteyou(participantI)" class="button" style="display: none"><span>User I </span></button>
-      <button id = "one_press10" onclick="canIInviteyou(participantJ)" class="button"style="display: none"><span>User J </span></button>
+<div class="w3-threequarter" style="margin-left: 2%;">
+  <h1 style="border-top: solid;font-size: 28px"><strong>You want to invite ....</strong></h1> 
+      <button id = "one_press1" onclick="topFunction(participantA)" class="button"><span> </span></button>
+      <button id = "one_press2" onclick="topFunction(participantB)" class="button"><span>User B</span></button>
+      <button id = "one_press3" onclick="topFunction(participantC)" class="button"><span>User C </span></button>
+      <button id = "one_press4" onclick="topFunction(participantD)" class="button"><span>User D </span></button>
+      <button id = "one_press5" onclick="topFunction(participantE)" class="button"><span>User E </span></button>
+      <button id = "one_press6" onclick="topFunction(participantF)" class="button"><span>User F </span></button>
+      <button id = "one_press7" onclick="topFunction(participantG)" class="button"><span>User G </span></button>
+      <button id = "one_press8" onclick="topFunction(participantH)" class="button"><span>User H </span></button>
+      <button id = "one_press9" onclick="topFunction(participantI)" class="button"><span>User I </span></button>
+      <button id = "one_press10" onclick="topFunction(participantJ)" class="button"><span>User J </span></button>
 
 
   <h3>Feel Free to invite someone!</h2>
 </div>
 <div class="w3-quarter" style="margin-top: 8%; margin-left: 5%">
+  
       <br>
       <br>
+
 </div>
+
 
 
 
@@ -97,9 +153,6 @@ var participantI = "Peyton";
 var participantJ = "Frances";
 var invitecheck = false;
 var invited_participant = "";
-var invitationquestion = "Can I invite you to be my partner, ___ ?"
-var secondaryinvitationquestion = "Can I invite you to be my partner, "
-var selected_person_to_invite = "";
 
 var times = " <br />Please remember or write the down all digits and letter<br />";
 var times_check = " <br />Please remember or write the down all digits and letter<br />";
@@ -116,19 +169,12 @@ window.onload = function(){
     document.getElementById('one_press8').innerHTML = participantH;
     document.getElementById('one_press9').innerHTML = participantI;
     document.getElementById('one_press10').innerHTML = participantJ;
-    document.getElementById('canyoubemypartner').innerHTML = invitationquestion;
-
 
 };
 
-function canIInviteyou(name){
-    document.getElementById('canyoubemypartner').innerHTML = secondaryinvitationquestion + name + " ?"  ;
-    selected_person_to_invite = name;
-
-}
 
 function topFunction(name) {
-    $("#msgbox").append(" <h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'>You Invited " + selected_person_to_invite+ "</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'>You Invited " + name+ "</h6>");
 
     document.getElementById("one_press1").disabled = true;
     document.getElementById("one_press2").disabled = true;
@@ -157,13 +203,13 @@ function topFunction(name) {
 
 function invite_self(name) {
   if (invitecheck==false){
-      $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'> "+ name +" Invited You to the room</h6>");
+      $("#msgbox").append("<h6 style='color: white;margin:8px'> "+ name +" Invited You to the room</h6>");
 
       document.getElementById("show_on_invite").style.display = "block";
   }
 }
 function handle_invite(event){
-    $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'> You "+ event +" the Invite</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'> You "+ event +" the Invite</h6>");
     document.getElementById("one_press19").disabled = true;
     document.getElementById("one_press20").disabled = true;
 
@@ -178,49 +224,37 @@ function handle_invite(event){
 }
 
 function handle_invite_accept(user){
-    $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'>"+ user +" Accepted Your Invite</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'>"+ user +" Accepted Your Invite</h6>");
 }
 
 
 function OtherPeople(from, to) {
-    $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " Invites " + to + " to make a group</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " Invites " + to + " to make a group</h6>");
 }
 
 function OtherPeopleAccept(from, to) {
     if (invited_participant == from){
       OtherPeopleDecline(from,to);  
     }else {
-      $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " accepts " + to + "'s' invatation</h6>");
+      $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " accepts " + to + "'s' invatation</h6>");
     }
 }
 function OtherPeopleDecline(from, to) {
-    $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " declines " + to + "'s' invatation</h6>");
+    $("#msgbox").append("<h6 style='color: white;margin:8px'> " + from + " declines " + to + "'s' invatation</h6>");
 }
 
 function sedlyf(){
   alert('Nobody has invited you yet!')
 }
 
-function addParticipant(nameOfParticipant,ID){
-  $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + nameOfParticipant +  " joined the room </h6>");
-  document.getElementById(ID).style = "block";
-}
-
-setTimeout(addParticipant, 3000, participantF,"one_press6");
-setTimeout(addParticipant, 3000, participantE,"one_press5");
 setTimeout(OtherPeople, 5000, participantC ,participantF); 
 setTimeout(OtherPeopleAccept, 7000 , participantF, participantC)
-setTimeout(addParticipant, 10000, participantG,"one_press7");
-setTimeout(addParticipant, 11000, participantI,"one_press9");
 setTimeout(OtherPeople, 13000, participantG, participantA); 
 setTimeout(OtherPeopleDecline, 16000, participantA, participantG); 
-setTimeout(addParticipant, 20000, participantJ,"one_press10");
-setTimeout(addParticipant, 22000, participantH,"one_press8");
 setTimeout(OtherPeople, 26000, participantB, participantI); 
 setTimeout(OtherPeopleAccept, 30000 , participantI, participantB)
 setTimeout(OtherPeople, 33000, participantE, participantJ); 
 setTimeout(OtherPeopleDecline, 35000, participantJ, participantE); 
-setTimeout(addParticipant, 37000, participantD,"one_press4");
 setTimeout(OtherPeople, 44000, participantD, participantH);
 setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
 
