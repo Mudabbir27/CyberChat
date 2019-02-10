@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 
 
-<div class="w3-half" style="margin-top: 1%;height: 800px">
+<div class="w3-half" style="margin-top: 1%;min-height: 500px">
 
   <div id= "msgbox" style="margin-top: 0" ></div>
 
@@ -62,7 +62,7 @@ $(document).ready(function(){
       <button id = "one_press1" onclick="canIInviteyou(participantA)" class="button"><span>User A </span></button>
       <button id = "one_press2" onclick="canIInviteyou(participantB)" class="button"><span>User B</span></button>
       <button id = "one_press3" onclick="canIInviteyou(participantC)" class="button"><span>User C </span></button>
-      <button id = "one_press4" onclick="canIInviteyou(participantD)" class="button" style="display: none"><span>User D </span></button>
+      <button id = "one_press4" onclick="canIInviteyou(participantD)" class="button"><span>User D </span></button>
       <button id = "one_press5" onclick="canIInviteyou(participantE)" class="button" style="display: none"><span>User E </span></button>
       <button id = "one_press6" onclick="canIInviteyou(participantF)" class="button" style="display: none"><span>User F </span></button>
       <button id = "one_press7" onclick="canIInviteyou(participantG)" class="button" style="display: none"><span>User G </span></button>
@@ -206,7 +206,7 @@ function addParticipant(nameOfParticipant,ID){
   document.getElementById(ID).style = "block";
 }
 
-setTimeout(addParticipant, 3000, participantF,"one_press6");
+// setTimeout(addParticipant, 3000, participantF,"one_press6");
 setTimeout(addParticipant, 3000, participantE,"one_press5");
 setTimeout(OtherPeople, 5000, participantC ,participantF); 
 setTimeout(OtherPeopleAccept, 7000 , participantF, participantC)
