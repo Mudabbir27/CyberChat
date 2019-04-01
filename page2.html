@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 <div class="w3-half" style="margin-top: 1%;min-height: 500px">
 
-  <div id= "msgbox" style="margin-top: 0" ></div>
+  <div id= "msgbox" style="margin-top: 0; transition-delay: 2s;" ></div>
 
   <div id="show_on_invite" style="margin-left: 2% ;bottom: 1px;display: none">
         <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Yes, my pleasure</span></button>
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
   <p style="border-top: solid;margin: 0%"></p>
 
-  <span id="canyoubemypartner" style=": bottom"></span>
+  <span id="canyoubemypartner" style=": bottom;"></span>
 
   <button id = "one_press" onclick="topFunction(participantA)" class="button sendButton">Send</button>
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
   <h3>Feel Free to invite someone!</h2>
 </div>
-<div class="w3-quarter" style="margin-top: 8%; margin-left: 5%">
+<div class="w3-quarter" style="margin-top: 8%; margin-left: 5%;">
       <br>
       <br>
 </div>
@@ -122,7 +122,7 @@ window.onload = function(){
 };
 
 function canIInviteyou(name){
-    document.getElementById('canyoubemypartner').innerHTML = secondaryinvitationquestion + name + " ?"  ;
+    document.getElementById('canyoubemypartner').innerHTML = secondaryinvitationquestion + '<span style=": bottom;border: solid;">'         + name + '</span>'  + " ?"  ;
     selected_person_to_invite = name;
 
 }
@@ -233,6 +233,8 @@ function Save(){
   if (times == times_check){
     times += " M<br />"
   }
+//  window.location = 'save_page.html';
+
   let newWindow = window.open("about:blank", "_self", ""); 
   let textBlock = times;
   newWindow.document.write(textBlock);

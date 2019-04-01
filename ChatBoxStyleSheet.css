@@ -1,4 +1,4 @@
-﻿/* Chat containers */
+/* Chat containers */
 .containerchatBox {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
@@ -85,3 +85,4 @@ div.transbox {
   opacity: 0.9;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
