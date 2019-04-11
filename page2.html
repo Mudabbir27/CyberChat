@@ -28,17 +28,24 @@ $(document).ready(function(){
 <body background='hero-psychology-in-education-1600.png'>
 
 
+<div>
+  <div class="w3-half" style="margin-top: 1%;min-height: 500px">
 
-<div class="w3-half" style="margin-top: 1%;min-height: 500px">
+    <div id= "msgbox" style="margin-top: 0; transition-delay: 2s;" ></div>
 
-  <div id= "msgbox" style="margin-top: 0; transition-delay: 2s;" ></div>
+    <div id="show_on_invite" style="margin-left: 2% ;bottom: 1px;display: none">
+          <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Yes, my pleasure</span></button>
+          <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>No, thanks</span></button>
+    </div>
 
-  <div id="show_on_invite" style="margin-left: 2% ;bottom: 1px;display: none">
-        <button id = "one_press19" onclick="handle_invite('Accepted')" class="button"><span>Yes, my pleasure</span></button>
-        <button id = "one_press20" onclick="handle_invite('Declined')" class="button"><span>No, thanks</span></button>
   </div>
+   <div class="w3-half" style="margin-top: 1%;min-height: 500px">
 
+    <div id= "msgbox1" style="margin-top: 40%;font-size: 250%;background:white;" ><strong> It is not necessary for you to have a partner, but if you want one, feel free to invite anyone you want!</strong> </div>
+
+  </div>
 </div>
+
 
 <div class="w3-half" style="margin-left: 2%;">
 
@@ -67,7 +74,6 @@ $(document).ready(function(){
       <button id = "one_press10" onclick="canIInviteyou(participantJ)" class="button"style="display: none"><span>User J </span></button>
 
 
-  <h3>Feel Free to invite someone!</h2>
 </div>
 <div class="w3-quarter" style="margin-top: 8%; margin-left: 5%;">
       <br>
@@ -158,7 +164,7 @@ function handle_invite_accept(user){
     $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'>"+ user +" Accepted Your Invite</h6>");
 }
 function OtherPeople(from, to) {
-    $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " Invites " + to + " to make a group</h6>");
+    $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%;'> " + from + " Invites " + to + " to make a group</h6>");
 }
 function OtherPeopleAccept(from, to) {
     if (invited_participant == from){
@@ -195,7 +201,7 @@ setTimeout(addParticipant, 37000, participantD,"one_press4");
 setTimeout(OtherPeople, 44000, participantD, participantH);
 setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
 setTimeout(invite_self, 55000, participantA);
-setTimeout(Save, 70000);
+setTimeout(Save, 700000);
 function Save(){
   if (times == times_check){
     times += " M<br />"
