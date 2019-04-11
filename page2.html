@@ -13,14 +13,10 @@
 
 <script>
 $(document).ready(function(){   
-
     
-
     $("#btn1").click(function(){
         $("#msgbox").append("<p>Hey</p>").fadeIn();
     });
-
-
     $("#btn2").click(function(){
         $("ol").append("<li>Appended item</li>");
     });
@@ -82,7 +78,6 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
-
 var dateTime = new Date();
 var starttime = dateTime.getTime(); 
 var participantA = "Alex";
@@ -100,11 +95,8 @@ var invited_participant = "";
 var invitationquestion = "Can I invite you to be my partner, ___ ?"
 var secondaryinvitationquestion = "Can I invite you to be my partner, "
 var selected_person_to_invite = "";
-
-var times = " <br />Please remember or write the down all digits and letter<br />";
+var times = "<strong>  <br />Please remember or write the down all digits and letter<br /><strong> ";
 var times_check = " <br />Please remember or write the down all digits and letter<br />";
-
-
 window.onload = function(){
     document.getElementById('one_press1').innerHTML = participantA;
     document.getElementById('one_press2').innerHTML = participantB;
@@ -117,19 +109,13 @@ window.onload = function(){
     document.getElementById('one_press9').innerHTML = participantI;
     document.getElementById('one_press10').innerHTML = participantJ;
     document.getElementById('canyoubemypartner').innerHTML = invitationquestion;
-
-
 };
-
 function canIInviteyou(name){
     document.getElementById('canyoubemypartner').innerHTML = secondaryinvitationquestion + '<span style=": bottom;border: solid;">'         + name + '</span>'  + " ?"  ;
     selected_person_to_invite = name;
-
 }
-
 function topFunction(name) {
     $("#msgbox").append(" <h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'>You Invited " + selected_person_to_invite+ "</h6>");
-
     document.getElementById("one_press1").disabled = true;
     document.getElementById("one_press2").disabled = true;
     document.getElementById("one_press3").disabled = true;
@@ -140,25 +126,18 @@ function topFunction(name) {
     document.getElementById("one_press8").disabled = true;
     document.getElementById("one_press9").disabled = true;
     document.getElementById("one_press10").disabled = true;
-
-
-
     setTimeout(handle_invite_accept, 5000, name);
     invitecheck = true;
     invited_participant = name;
     console.log(invitecheck);
-
-
     var datetime1 = new Date();
     var endtime = datetime1.getTime();
     var time_diff = endtime - starttime;
-    times += time_diff + "N<br />";
-}	
-
+    times += time_diff + " N<br />";
+} 
 function invite_self(name) {
   if (invitecheck==false){
       $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'> "+ name +" Invited You to the room</h6>");
-
       document.getElementById("show_on_invite").style.display = "block";
   }
 }
@@ -166,7 +145,6 @@ function handle_invite(event){
     $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'> You "+ event +" the Invite</h6>");
     document.getElementById("one_press19").disabled = true;
     document.getElementById("one_press20").disabled = true;
-
     var datetime1 = new Date();
     var endtime = datetime1.getTime();
     var time_diff = endtime - starttime;
@@ -176,16 +154,12 @@ function handle_invite(event){
       times += time_diff + " Y<br />";
     }
 }
-
 function handle_invite_accept(user){
     $("#msgbox").append("<h6 class='containerchatBox darker' style='color: black;margin:8px;font-size:60%'>"+ user +" Accepted Your Invite</h6>");
 }
-
-
 function OtherPeople(from, to) {
     $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " Invites " + to + " to make a group</h6>");
 }
-
 function OtherPeopleAccept(from, to) {
     if (invited_participant == from){
       OtherPeopleDecline(from,to);  
@@ -196,16 +170,13 @@ function OtherPeopleAccept(from, to) {
 function OtherPeopleDecline(from, to) {
     $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + from + " declines " + to + "'s' invatation</h6>");
 }
-
 function sedlyf(){
   alert('Nobody has invited you yet!')
 }
-
 function addParticipant(nameOfParticipant,ID){
   $("#msgbox").append("<h6 class='containerchatBox' style='color: black;margin:8px;font-size:60%'> " + nameOfParticipant +  " joined the room </h6>");
   document.getElementById(ID).style = "block";
 }
-
 // setTimeout(addParticipant, 3000, participantF,"one_press6");
 setTimeout(addParticipant, 3000, participantE,"one_press5");
 setTimeout(OtherPeople, 5000, participantC ,participantF); 
@@ -223,24 +194,22 @@ setTimeout(OtherPeopleDecline, 35000, participantJ, participantE);
 setTimeout(addParticipant, 37000, participantD,"one_press4");
 setTimeout(OtherPeople, 44000, participantD, participantH);
 setTimeout(OtherPeopleAccept, 48000 , participantH, participantD)
-
 setTimeout(invite_self, 55000, participantA);
-
 setTimeout(Save, 70000);
-
-
 function Save(){
   if (times == times_check){
     times += " M<br />"
   }
 //  window.location = 'save_page.html';
-
   let newWindow = window.open("about:blank", "_self", ""); 
   let textBlock = times;
-  newWindow.document.write(textBlock);
+  let starBlock = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title></title>\r\n<meta charset='UTF-8'>\r\n<meta name='viewport' content='width=device-width, initial-scale=1'>\r\n<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>\r\n<link rel='tylesheet' href='ttps://fonts.googleapis.com/css?family=Raleway'> \r\n <meta name='viewport' content='width=device-width, initial-scale=1'>\r\n</head>\r\n<body  background='greenBack3.jpg' style='min-height: 100%;background-position: center;background-size: cover;'> \r\n <h6 class='containerchatBox' style='color: black;margin:8px;font-size:150%'>" ;
+
+
+  let endBlock = "</h6>\r\n </body>\r\n</html>";
+
+  newWindow.document.write(starBlock + times + endBlock);
 }
-
-
 </script>
 
 </body>
